@@ -4,10 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* macros for bitonic sort */
-#define UP 0
-#define DOWN 1
-
+/* linked list struct they gave us */
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -15,6 +12,7 @@
  * @prev: Pointer to the previous element of the list
  * @next: Pointer to the next element of the list
  */
+
 typedef struct listint_s
 {
 	const int n;
@@ -22,17 +20,13 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-void bubble_sort(int *array, size_t size);
-void swap_ints(int *a, int *b);
-void insertion_sort_list(listint_t **list);
-void swap_nodes(listint_t **list, listint_t **node1, listint_t **node2);
-void selection_sort(int *array, size_t size);
-void quick_sort(int *array, size_t size);
+/* prototypes - theirs*/
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
-listint_t *create_listint(const int *array, size_t size);
-
-/* advanced tasks */
+void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
@@ -42,4 +36,11 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
-#endif
+/* prototypes - mine */
+void swap(int *array, int a, int b);
+void swapper(listint_t *a, listint_t *b);
+size_t knuth_gap(size_t size);
+void kwiksort(int *array, size_t size, ssize_t low, ssize_t high);
+size_t partition(int *array, size_t size, ssize_t low, ssize_t high);
+void swaps(int *array, size_t size, int *a, int *b);
+#endif /* SORT_H */
